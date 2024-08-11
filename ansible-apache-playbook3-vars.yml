@@ -1,0 +1,11 @@
+- name: Display my name on all hosts
+  hosts: all
+  become: no
+
+  vars:
+    my_name: "Maimouna Diallo"
+
+  tasks:
+    - name: Display my name
+      ansible.builtin.debug: 
+        msg: "My name is {{my_name}}"

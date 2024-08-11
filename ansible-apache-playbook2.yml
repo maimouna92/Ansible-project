@@ -1,0 +1,13 @@
+- name: Install Git on all Ubuntu clients
+  hosts: ubuntu
+  become: yes # Ensure you have root privileges for the tasks
+
+  tasks:
+    - name: Update package index
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install Git
+      ansible.builtin.apt:
+        name: git
+        state: present
+
